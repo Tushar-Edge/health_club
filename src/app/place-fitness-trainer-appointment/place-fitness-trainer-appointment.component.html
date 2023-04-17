@@ -1,0 +1,131 @@
+<h2>Book Appointment</h2>
+
+<form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+    <div *ngIf="appointmentForm.get('name')?.invalid && (appointmentForm.get('name')?.dirty || appointmentForm.get('name')?.touched)">
+      <div *ngIf="appointmentForm.get('name')?.errors?.['required']">Name is required.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="age">Age:</label>
+    <input type="text" id="age" formControlName="age">
+    <div *ngIf="appointmentForm.get('age')?.invalid && (appointmentForm.get('age')?.dirty || appointmentForm.get('age')?.touched)">
+      <div *ngIf="appointmentForm.get('age')?.errors?.['required']">Age is required.</div>
+      <div *ngIf="appointmentForm.get('age')?.errors?.['pattern']">Please enter a valid age.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email">
+    <div *ngIf="appointmentForm.get('email')?.invalid && (appointmentForm.get('email')?.dirty || appointmentForm.get('email')?.touched)">
+      <div *ngIf="appointmentForm.get('email')?.errors?.['required']">Email is required.</div>
+      <div *ngIf="appointmentForm.get('email')?.errors?.['email']">Please enter a valid email address.</div>
+      <div *ngIf="appointmentForm.get('email')?.errors?.['unique']">This email address is already registered.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="mobile">Mobile No:</label>
+    <input type="text" id="mobile" formControlName="mobile">
+    <div *ngIf="appointmentForm.get('mobile')?.invalid && (appointmentForm.get('mobile')?.dirty || appointmentForm.get('mobile')?.touched)">
+      <div *ngIf="appointmentForm.get('mobile')?.errors?.['required']">Mobile number is required.</div>
+      <div *ngIf="appointmentForm.get('mobile')?.errors?.['pattern']">Please enter a valid mobile number.</div>
+      <div *ngIf="appointmentForm.get('mobile')?.errors?.['unique']">This mobile number is already registered.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="address1">Address Line 1:</label>
+    <input type="text" id="address1" formControlName="address1">
+    <div *ngIf="appointmentForm.get('address1')?.invalid && (appointmentForm.get('address1')?.dirty || appointmentForm.get('address1')?.touched)">
+      <div *ngIf="appointmentForm.get('address1')?.errors?.['required']">Address Line 1 is required.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="address2">Address Line 2:</label>
+    <input type="text" id="address2" formControlName="address2">
+    <div *ngIf="appointmentForm.get('address2')?.invalid && (appointmentForm.get('address2')?.dirty || appointmentForm.get('address2')?.touched)">
+      <div *ngIf="appointmentForm.get('address2')?.errors?.['required']">Address Line 2 is required.</div>
+    </div>
+   </div>
+   
+<div>
+  <label for="city">City:</label>
+  <input type="text" id="city" formControlName="city">
+  <div *ngIf="appointmentForm.get('city')?.invalid && (appointmentForm.get('city')?.dirty || appointmentForm.get('city')?.touched)">
+    <div *ngIf="appointmentForm.get('city')?.errors?.['required']">City is required.</div>
+  </div>
+</div>
+<div>
+  <label for="state">State:</label>
+  <input type="text" id="state" formControlName="state">
+  <div *ngIf="appointmentForm.get('state')?.invalid && (appointmentForm.get('state')?.dirty || appointmentForm.get('state')?.touched)">
+    <div *ngIf="appointmentForm.get('state')?.errors?.['required']">State is required.</div>
+  </div>
+</div>
+<div>
+  <label for="country">Country:</label>
+  <input type="text" id="country" formControlName="country">
+  <div *ngIf="appointmentForm.get('country')?.invalid && (appointmentForm.get('country')?.dirty || appointmentForm.get('country')?.touched)">
+    <div *ngIf="appointmentForm.get('country')?.errors?.['required']">Country is required.</div>
+  </div>
+</div>
+<div>
+  <label for="pincode">Pin Code:</label>
+  <input type="text" id="pincode" formControlName="pincode">
+  <div *ngIf="appointmentForm.get('pincode')?.invalid && (appointmentForm.get('pincode')?.dirty || appointmentForm.get('pincode')?.touched)">
+    <div *ngIf="appointmentForm.get('pincode')?.errors?.['required']">Pin Code is required.</div>
+    <div *ngIf="appointmentForm.get('pincode')?.errors?.['pattern']">Please enter a valid Pin Code.</div>
+  </div>
+</div>
+<div>
+  <label for="trainerPreference">Trainer Preference:</label>
+  <select id="trainerPreference" formControlName="trainerPreference">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+  <div *ngIf="appointmentForm.get('trainerPreference')?.invalid && (appointmentForm.get('trainerPreference')?.dirty || appointmentForm.get('trainerPreference')?.touched)">
+    <div *ngIf="appointmentForm.get('trainerPreference')?.errors?.['required']">Trainer Preference is required.</div>
+  </div>
+</div>
+<div>
+  <label for="physiotherapist">Physiotherapist:</label>
+  <select id="physiotherapist" formControlName="physiotherapist">
+    <option value="no">No</option>
+    <option value="yes">Yes</option>
+  </select>
+</div>
+<div>
+  <label for="package">Select a Package:</label>
+  <select id="package" formControlName="package" (change)="onPackageChange()">
+    <option value="1">Package 1</option>
+    <option value="2">Package 2</option>
+    <option value="3">Package 3</option>
+  </select>
+  <div *ngIf="appointmentForm.get('package')?.invalid && (appointmentForm.get('package')?.dirty || appointmentForm.get('package')?.touched)">
+    <div *ngIf="appointmentForm.get('package')?.errors?.['required']">Package is required.</div>
+  </div>
+</div>
+
+
+
+    <div>
+      <label for="weeks">Weeks</label>
+      <input type="text" id="weeks" formControlName="weeks">
+      <div *ngIf="appointmentForm.get('weeks')?.invalid && (appointmentForm.get('weeks')?.dirty || appointmentForm.get('weeks')?.touched)">
+        <div *ngIf="appointmentForm.get('weeks')?.errors?.['required']">weeks</div>
+        <div *ngIf="appointmentForm.get('weeks')?.errors?.['pattern']">Please enter a valid week</div>
+      </div>
+    </div>
+ 
+
+
+
+<div *ngIf="successMessage" class="alert alert-success">{{successMessage}}</div>
+<div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+<button type="button" class="btn btn-primary" (click)="onSubmit()">

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+          <img src="../../assets/fitness.jpg" alt="Logo">
+        </div>
+        <nav class="header-menu">
+          <ul>
+            <li><button (click)="loadComponent('landing-page')">Home</button></li>
+            <li><button (click)="loadComponent('view-appointment')">View Appointments</button></li>
+            <li><button (click)="loadComponent('place-fitness-trainer-appointment')">Place Appointments</button></li>
+            <li><button (click)="loadComponent('contact-us')">Contact US</button></li>
+
+        
+
+
+
+          </ul>
+        </nav>
+      </header>
+      
+      <router-outlet></router-outlet>
+      
+  <div id="main">
+
+    <article #article>
+      
+      
+    </article>
+  </div>
+
+  
+  <footer>
+    <div class="upper-row">
+      <div class="column">
+        <!-- content for the left column -->
+      </div>
+      <div class="column bigger">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/appointments">View Appointments</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="column right">
+        <p>Company Address</p>
+        <p>Company Email</p>
+        <p>Phone: XXX-XXX-XXXX</p>
+        <p>Fax: XXX-XXX-XXXX</p>
+      </div>
+    </div>
+    <div class="lower-row">
+        copyright
+    </div>
+  </footer>
+  
+</body>
+
+</html>

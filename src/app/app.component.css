@@ -1,0 +1,138 @@
+
+* {
+    box-sizing: border-box; 
+   }
+   body {
+     margin: 0;
+   }
+   #main {
+     display: flex;
+     min-height: calc(100vh - 37vh);
+     background-color: white;
+   }
+   
+
+   article
+   {
+    background-color: white;
+   }
+  
+   header, footer, article{
+     padding: 1em;
+   }
+   header{
+     background: yellowgreen;
+     height: 15vh;
+   }
+ 
+ footer {
+     background: yellowgreen;
+     height: 25vh;
+     
+   }
+ 
+   header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height: 15vh;
+     background-color:  yellowgreen;;
+     border-bottom: 1px solid #ccc;
+     padding: 0 20px;
+   }
+   
+   .header-logo {
+     flex-basis: 15%;
+   }
+   
+   .header-logo img {
+     height: 100px;
+     margin-top: 2px;
+   }
+   
+   .header-menu {
+     flex-basis: 85%;
+     text-align: center;
+   }
+   
+   .header-menu ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+   }
+   
+   .header-menu li {
+     display: inline-block;
+     margin-left: 20px;
+   }
+   
+   .header-menu li:first-child {
+     margin-left: 0;
+   }
+   
+   .header-menu button {
+     color: #333;
+     text-decoration: none;
+     font-size: 16px;
+     padding: 10px 20px;
+     border-radius: 30px;
+     transition: background-color 0.3s ease;
+   }
+   
+   .header-menu a:hover,
+   .header-menu a.active {
+     background-color: #333;
+     color: #259e00;
+   }
+   
+ 
+   footer {
+     width: 100%;
+     background-color: #333;
+     color: #fff;
+     padding: 10px;
+     box-sizing: border-box;
+
+   }
+   
+   .upper-row {
+     display: flex;
+     flex-wrap: wrap;
+     
+   }
+   .column {
+     flex: 1;
+     text-align: center;
+     margin-bottom: 5px;
+   }
+   
+   .column.bigger {
+     flex: 2;
+     background-color:greenyellow;
+   }
+   
+   .column.right {
+     text-align: right;
+     background-color: black;
+   }
+
+   .column.right p{
+    font-size: 12px;
+  }
+   
+   ul {
+     list-style: none;
+     padding: 0;
+   }
+   
+   li {
+     margin-bottom: 2px;
+   }
+   
+   .lower-row {
+     text-align: center;
+     font-size: 17px;
+     background-color: white;
+     color:black;
+   }
+   
